@@ -8,7 +8,6 @@
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm run start-message",
     "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
@@ -101,16 +100,7 @@
     "react",
     "reactjs",
     "react-router",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack",
-    "redux",
-    "flux",
-    "boilerplate",
-    "starter"
+    "redux"
   ],
   "repository": {
     "type": "git",
@@ -129,7 +119,11 @@
   "babel": {
     "env": {
       "development": {
-        "presets": ["env", "react", "stage-1"]
+        "presets": [
+          "env",
+          "react",
+          "stage-1"
+        ]
       },
       "production": {
         "presets": [
